@@ -1,3 +1,4 @@
+import { FrameworkConfigService } from '../../fw/services/framework-config.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+constructor(private frameworkConfigService:FrameworkConfigService){
+
+let config:frameworkConfigService:frameworkConfigService
+}
 }
