@@ -1,3 +1,4 @@
+import { ScreenService } from '../services/screen.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleBarComponent implements OnInit {
 
-  constructor() { }
+  //Now, in our view we can get the access of ScreenService, ctor is the glue between injectable code and view
+  constructor(private screenService:ScreenService) { }
 
   ngOnInit() {
   }

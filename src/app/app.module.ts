@@ -1,3 +1,5 @@
+import { ScreenService } from '../../fw/services/screen.service';
+import { FrameworkConfigService } from '../../fw/services/framework-config.service';
 import { FwModule } from '../../fw/fw.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +18,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     FwModule
   ],
-  providers: [],
+  providers: [FrameworkConfigService,ScreenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

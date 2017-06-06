@@ -1,4 +1,3 @@
-import { link } from 'fs';
 import { Injectable } from '@angular/core';
 
 export interface IconFiles{
@@ -7,11 +6,11 @@ export interface IconFiles{
   link:string;
 }
 
-export interface FrameConfigSettings{
+export interface FrameworkConfigSettings{
   showLanguageSelector?:boolean,
   showUserControls?:boolean,
   showStatusBar?:boolean,
-  showStatusBarBreakpoint?:boolean,
+  showStatusBarBreakpoint?:number,
   socialIcons?:Array<IconFiles>
 }
 
@@ -23,7 +22,7 @@ export class FrameworkConfigService {
   showStatusBarBreakpoint=0;
   socialIcons= new Array<IconFiles>();
 
-  configure(settings:FrameConfigSettings):void{
+  configure(settings:FrameworkConfigSettings):void{
     Object.assign(this,settings);
   }
   
