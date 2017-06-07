@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*This will decide whether horizontal menu or vertical menu*/
+
+li {
+    display: inline;
+}
