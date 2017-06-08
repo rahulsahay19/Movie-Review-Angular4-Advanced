@@ -1,4 +1,3 @@
-import { IConfigurationFile } from 'tslint/lib/configuration';
 import { Injectable } from '@angular/core';
 
 export interface MenuItem{
