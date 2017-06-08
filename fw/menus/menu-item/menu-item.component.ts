@@ -1,4 +1,4 @@
-import { MenuItem } from '../../services/menu.service';
+import { MenuItem, MenuService } from '../../services/menu.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ export class MenuItemComponent implements OnInit {
 
  //@Input() item: MenuItem; see angular-cli issue #2034, below is the workaround.
  @Input() item = <MenuItem>null;
-  constructor() { }
+  constructor(private menuService:MenuService) { }
 
   ngOnInit() {
   }
