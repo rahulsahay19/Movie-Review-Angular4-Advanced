@@ -1,11 +1,34 @@
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { MenuItem, MenuService } from '../../services/menu.service';
-import { Component, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer } from '@angular/core';
+import {
+    animate,
+    Component,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    Input,
+    OnInit,
+    Renderer,
+    style,
+    transition,
+    trigger
+} from '@angular/core';
 
 @Component({
   selector: 'fw-menu-item',
   templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.css']
+  styleUrls: ['./menu-item.component.css'],
+  animations: [
+        trigger('visibilityChanged', [
+            transition(':enter', [   // :enter is alias to 'void => *'
+                style({opacity:0}),
+                animate(100, style({opacity:1})) 
+            ]),
+            transition(':leave', [   // :leave is alias to '* => void'
+                animate(100, style({opacity:0})) 
+            ])
+        ])
+    ]
 })
 export class MenuItemComponent implements OnInit {
 
@@ -25,8 +48,22 @@ export class MenuItemComponent implements OnInit {
               private renderer: Renderer) {
   }
 
+checkActiveRoute(route:string){
+this.isActiveRoute=(route== "/"+this.item.route);
+
+}
 
   ngOnInit() {
+      //Activating route class 
+      this.checkActiveRoute(this.router.url);
+
+      this.router.events
+        .subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                this.checkActiveRoute(event.url);
+                console.log(event.url + ' ' + this.item.route + ' ' + this.isActiveRoute);
+            }
+        });
   }
 @HostListener('click', ['$event'])
   onClick(event) : void {
