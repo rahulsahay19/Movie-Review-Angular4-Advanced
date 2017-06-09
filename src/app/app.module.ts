@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth-guard.service';
 import { appRoutes } from './app.routing';
 import { RouterModule } from '@angular/router';
 import { ScreenService } from '../../fw/services/screen.service';
@@ -15,6 +16,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieMaintComponent } from './movie-maint/movie-maint.component';
+import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
+import { UserApi } from '../../fw/users/user-api';
+import { UserService } from './services/user-service';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { MovieMaintComponent } from './movie-maint/movie-maint.component';
     SettingsComponent,
     MovieDetailComponent,
     MovieListComponent,
-    MovieMaintComponent
+    MovieMaintComponent,
+    AuthenticatedUserComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import { MovieMaintComponent } from './movie-maint/movie-maint.component';
     FwModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [FrameworkConfigService,ScreenService],
+  providers: [FrameworkConfigService,ScreenService,UserService,{provide:UserApi,useExisting:UserService},AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,7 +4,7 @@ export let initialMenuItems:Array<MenuItem>=[
     {
         text: 'Dashboard',
         icon: 'glyphicon-dashboard',
-        route: 'dashboard',
+        route: '/authenticated/dashboard',
         submenu: null
     },
     {
@@ -20,19 +20,19 @@ export let initialMenuItems:Array<MenuItem>=[
                     {
                         text: 'Godzilla',
                         icon: 'glyphicon-film',
-                        route: 'movie-detail/Godzilla',
+                        route: '/authenticated/movie-detail/Godzilla',
                         submenu: null
                     },
                     {
                         text: 'Titanic',
                         icon: 'glyphicon-film',
-                        route: 'movie-detail/Titanic',
+                        route: '/authenticated/movie-detail/Titanic',
                         submenu: null
                     },
                     {
                         text: 'Predator',
                         icon: 'glyphicon-film',
-                        route: 'movie-detail/Predator',
+                        route: '/authenticated/movie-detail/Predator',
                         submenu: null
                     }
                 ]
@@ -40,19 +40,19 @@ export let initialMenuItems:Array<MenuItem>=[
             {
                 text: 'Top 3',
                 icon: 'glyphicon-film',
-                route: 'movie-list/3',
+                route: '/authenticated/movie-list/3',
                 submenu: null
             },
             {
                 text: 'Top 10',
                 icon: 'glyphicon-film',
-                route: 'movie-list/10',
+                route: '/authenticated/movie-list/10',
                 submenu: null
             },
             {
                 text: 'All',
                 icon: 'glyphicon-film',
-                route: 'movie-list/0',
+                route: '/authenticated/movie-list/0',
                 submenu: null
             }
         ],
@@ -65,13 +65,13 @@ export let initialMenuItems:Array<MenuItem>=[
             {
                 text: 'Movies List',
                 icon: 'glyphicon-th-list',
-                route: 'movie-maint',
+                route: '/authenticated/movie-maint',
                 submenu: null
             },
             {
                 text: 'Settings',
                 icon: 'glyphicon-cog',
-                route: 'settings',
+                route: '/authenticated/settings',
                 submenu: null
             }
         ]
