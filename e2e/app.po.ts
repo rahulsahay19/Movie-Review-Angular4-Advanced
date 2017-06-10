@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class GreenNationsPage {
+export class MovieReviewPage {
   navigateTo() {
     return browser.get('/');
   }
