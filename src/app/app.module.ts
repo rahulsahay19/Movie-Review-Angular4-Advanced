@@ -1,3 +1,4 @@
+import { AppDataService } from './services/app-data.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { appRoutes } from './app.routing';
 import { RouterModule } from '@angular/router';
@@ -38,7 +39,7 @@ import { UserService } from './services/user-service';
     FwModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [FrameworkConfigService,ScreenService,UserService,{provide:UserApi,useExisting:UserService},AuthGuard],
+  providers: [FrameworkConfigService,ScreenService,UserService,{provide:UserApi,useExisting:UserService},AuthGuard,AppDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,9 @@
-import { RegisterUserComponent } from './users/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
 
 import { SignInComponent } from './users/sign-in/sign-in.component';
 import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
@@ -24,7 +26,8 @@ import { TitleBarComponent } from "./title-bar/title-bar.component";
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     FrameworkBodyComponent,
@@ -38,7 +41,9 @@ import { TitleBarComponent } from "./title-bar/title-bar.component";
     MenuItemComponent,
     PopupMenuComponent,
     SignInComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    DynamicFormComponent,
+    DynamicFieldComponent
   ],
   providers:[
     FrameworkConfigService,
@@ -46,7 +51,8 @@ import { TitleBarComponent } from "./title-bar/title-bar.component";
     MenuService
   ],
   exports:[
-    FrameworkBodyComponent
+    FrameworkBodyComponent,
+    DynamicFormComponent
     
   ]
 })
