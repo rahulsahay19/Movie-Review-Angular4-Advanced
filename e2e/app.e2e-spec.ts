@@ -1,10 +1,10 @@
-import { GreenNationsPage } from './app.po';
+import { MovieReviewPage } from './app.po';
 
 describe('green-nations App', () => {
-  let page: GreenNationsPage;
+  let page: MovieReviewPage;
 
   beforeEach(() => {
-    page = new GreenNationsPage();
+    page = new MovieReviewPage();
   });
 
   it('should display message saying app works', () => {
